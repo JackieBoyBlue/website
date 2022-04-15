@@ -46,12 +46,10 @@ def work():
 # def page_not_found(e):
 #     return render_template('404.html'), {"Refresh": "7; url=/"}
 
-# @app.errorhandler(401)
-# def page_not_found(e):
-#     return render_template('401.html'), {"Refresh": "7; url=/"}
 
 
 # Run flask
-
 if __name__ == '__main__':
-    app.run(port=int(environ.get('PORT', 5000)), host='0.0.0.0')
+    port = int(environ.get('PORT', 5000))
+    print(port)
+    app.run(host='0.0.0.0', port=port, debug=True)
