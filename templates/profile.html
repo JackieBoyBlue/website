@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section id="profile" class="container" style="max-width: 600px;">
+    <div class="card mt-4" style="box-shadow: 0 20px 50px 0 rgb(0 0 0 / 15%);">
+        <div id="profile-pic" class="mt-5">
+            <img src="../static/images/pic.png" class="rounded mx-auto d-block" alt="profile-pic" style="height: 200px;">
+        </div>
+        <div class="display-5 fs-3 text-center mt-3">Jack Joshua Smith</div>
+        <div id="text" class="text-center mt-4 mb-5 mx-auto px-4">
+            <p class="lead">
+                Hi! My name's Jack, I'm {{ age }} and I'm a coder by trade. In my spare time I like to play games, produce (fairly mediocre) music, read and run.
+            </p>
+            <p class="lead">
+                On Wednesdays I go to a boxing class after work before heading out for a pub quiz in the evening. Once the work week is over <i>if</i> I'm not still at my computer I can often be found in a park,
+                a beer garden or a gig.
+            </p>
+        </div>
+    </div>
+</section>
+<section id="previous-experience" class="container mt-2 pt-2">
+    <!-- <img src="../static/images/work.svg" alt="working-icon" class="mx-auto d-block mt-5" height="200px"> -->
+    <div id="text" class="text-center mt-4 mb-5 mx-auto">
+        <div class="display-6 pb-4">What brought me to coding</div>
+        <p class="lead">
+            Before I began coding I was working a fairly standard admin job for Cardiff Council. Administration, believe it or not, was not my childhood dream but I did get along well with the people I worked with.
+            Then, out of the blue, the world closed down amidst a global pandemic. Homeworking became standard. Deprived of the people I'd become close to, with just a mundane job for company,  I began to explore other
+            options.
+        </p>
+        <div class="collapse" id="expandMyStory">
+            <p class="lead">
+                I weighed up how I'd like to work, which is in a skill based position where I'm able to continuously develop and am likely to be rewarded for it. I considered what I find engaging; I've spent my life on
+                computers dipping into professional software like Photoshop and Illustrator, more thoroughly learning music production programs starting with Fruity Loops and then continuing with Ableton Live for the past 7 years
+                or so, and occasionally dabbling in the video editing software Adobe Premiere primarily for my media studies A-level and then more recently making videos for friend and family birthdays. I'd say there are two main
+                benefits that I've taken from these hobbies, the first is a familiarity with how professional software tends to function at the user experience level and the second is a knack for independent learning,
+                troubleshooting and problem solving. I also wanted to be sure my chosen career would be somewhat future proof as I was, and am, planning on dedicating my foreseeable future to developing this skill set. 
+            </p>
+            <p class="lead">
+                My first instinct was to study for a qualification alongside my job. One evening while getting a lift home from a family friend with a background in software development I asked for some advice, he said that
+                in his opinion it's much better to get experience than a qualification if possible. A few weeks later he got in contact and suggested that I work for him developing an app. Of course I jumped at the opporunity.
+            </p>
+            <p class="lead">
+                The upsides have been tremendous; being able to dedciate all of my working hours to developing an app single-handedly from start to finish and all of the experience that's gone along with that, being able to
+                test and play and develop my skills independently (meaning no shortcuts, that every problem is thought through to its solution and absorbed thoroughly), and understanding not only the task that I was working on
+                at the time but necessarily how it would fit into the app as a whole.
+            </p>
+            <p><a href="/work" class="lead fs-6 text-reset text-decoration-none">Click here to find out more about the project.</a></p>
+            <p class="lead">
+                I'm excited to start the next chapter of my career and very much looking forward to meeting everyone on my team-to-be.
+            </p>
+        </div>
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#expandMyStory" aria-expanded="false" aria-controls="expandMyStory" onclick="style.display = 'none'">Continue reading</button>
+    </div>
+</section>
+<section id="spotify" class="container-flex py-2" style="background-image: url(../static/images/spotify-background.svg); background-size: cover; background-position: center; height: fit-content;">
+    <div class="container my-5">
+        <div class="text-center">
+            <img src="../static/images/spotify-logo.svg" class="img-fluid" alt="spotify-logo" style="max-height: 130px;"><img src="../static/images/spotify-name.svg" class="my-3 mx-5 img-fluid" style="max-height: 100px;" alt="spotify-name">
+        </div>
+        <iframe class="mt-5" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/71PkQ2p6NFAOs1dETsPZU7?utm_source=generator&theme=0" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+        <a href="https://open.spotify.com/user/dew5t056vvvfsvcqg1pnxjnq6?si=37c49b27d13e4651" class="text-center text-white text-decoration-none" target="_blank"><p>Full profile</p></a>
+    </div>
+</section>
+<section id="my-pc" class="container my-5">
+    <div class="display-6 text-center">My current PC build</div>
+    <ul class="list-group mx-auto mt-3" style="max-width: 600px; background-color: transparent; box-shadow: 0 20px 50px 0 rgb(0 0 0 / 15%);">
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">CPU</div>
+            <div class="me-2 ms-auto">AMD Ryzen 7 3700x</div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">Motherboard</div>
+            <div class="me-2 ms-auto">MPG x570 Gaming Plus</div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">Memory</div>
+            <div class="me-2 ms-auto">Corsair Vengeance LPX DDR4 3000mhz</div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">GPU</div>
+            <div class="me-2 ms-auto">Gigabyte RTX 2070 Windforce 2x</div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">Boot drive</div>
+            <div class="me-2 ms-auto">ADATA SX8200PNP 1TB</div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">Storage drive</div>
+            <div class="me-2 ms-auto">Samsung 870 QVO 1TB</div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">Case</div>
+            <div class="me-2 ms-auto">Corsair 4000D AF TGI MT Black</div>
+        </li>
+    </ul>
+    <div class="center-text w-100">
+        <div class="text-center fw-bold mt-3" style="font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;"><a href="https://www.userbenchmark.com/UserRun/51913413" class="text-reset text-decoration-none" target="_blank">UserBenchmark</a></div>
+    </div>
+</section>
+<section id="codewars" class="container-flex py-2" style="background-color: #303133; height: fit-content;">
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-12 col-lg-4 text-center">
+                <img src="../static/images/codewars.png" class="img-fluid" alt="codewars-logo" style="max-height: 211px;">
+            </div>
+            <div class="col-12 col-lg-8">
+                <img src="https://www.codewars.com/users/JackieBoyBlue/badges/large" class="my-3 mx-5" alt="codewars-rank">
+                <ul class="list-group-flush list-light">
+                    {% for kata in katas %}
+                    <li class="list-group-item d-flex justify-content-between align-items-start" style="background-color: transparent; color: white; border-color: rgba(255, 255, 255, 0.171);">
+                        <div class="ms-2 me-auto">{{ kata[0] }}</div>
+                        <div class="me-2 ms-auto">{{ kata[1] }}</div>
+                    </li>
+                    {% endfor %}
+                </ul>
+                <a href="https://www.codewars.com/users/JackieBoyBlue/completed" class="text-center text-secondary text-decoration-none" target="_blank"><p>View on codewars</p></a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

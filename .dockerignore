@@ -1,0 +1,5 @@
+.gitignore
+.gitattributes
+__pycache__
+pipfile
+pipfile.lock
