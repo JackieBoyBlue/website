@@ -1,1 +1,1 @@
-worker: python app.app --bind 0.0.0.0:${PORT}
+web: python app.app --bind 0.0.0.0:${PORT}
