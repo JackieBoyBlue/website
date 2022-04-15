@@ -1,6 +1,6 @@
 import requests
 from os import environ
-from flask import Flask, render_template, session
+from flask import Flask, render_template
 from datetime import datetime
 from math import floor
 from json import loads
@@ -42,13 +42,6 @@ def cv():
 def work():
     return render_template('work.html')
 
-
-# Jinja2 functions
-@app.context_processor
-def cookie_check():
-    cookie_check = session.get('cookie_check')
-    session['cookie_check'] = True
-    return dict(cookie_check=cookie_check)
 
 
 # # Error handling
