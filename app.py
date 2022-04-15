@@ -54,4 +54,4 @@ def work():
 # Run flask
 
 if __name__ == '__main__':
-    app.run(port=environ.get('PORT', 5000), host='0.0.0.0')
+    app.run(port=int(environ.get('PORT', 5000)), host='0.0.0.0')
