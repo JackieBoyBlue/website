@@ -4,14 +4,11 @@ from flask import Flask, render_template
 from datetime import datetime
 from math import floor
 from json import loads
-from dotenv import load_dotenv
 
 
 
 # Initialise app
 app = Flask(__name__)
-load_dotenv('.env')
-app.secret_key = environ.get('SECRET_KEY')
 
 
 # Homepage / profile
