@@ -50,6 +50,6 @@ def work():
 
 # Run flask
 if __name__ == '__main__':
-    port = int(environ.get('PORT', 5000))
+    port = int(environ.get('PORT'))
     print(port)
     app.run(port=port, debug=True) 
