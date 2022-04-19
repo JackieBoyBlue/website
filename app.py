@@ -51,4 +51,9 @@ def work():
 # Run flask
 if __name__ == '__main__':
     port = int(environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port, debug=True) 
+    if environ.get('IN_CONTAINER'):
+        from waitress import serve
+        serve(app, port=port)
+        debug=False
+    else: debug=True
+    app.run(host='0.0.0.0', port=port, debug=debug)
