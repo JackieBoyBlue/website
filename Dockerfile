@@ -3,6 +3,6 @@ FROM python:3.9.12-slim-buster
 WORKDIR /app
 COPY requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
-EXPOSE ${PORT:-5000}
+EXPOSE $PORT
 COPY . .
 CMD ["python3", "-m", "flask", "run"]
