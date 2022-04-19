@@ -41,10 +41,10 @@ def work():
 
 
 
-# # Error handling
-# @app.errorhandler(404)
-# def page_not_found(e):
-#     return render_template('404.html'), {"Refresh": "7; url=/"}
+# Error handling
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), {"Refresh": "5; url=/"}
 
 
 
