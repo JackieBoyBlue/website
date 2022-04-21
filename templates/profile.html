@@ -1,21 +1,24 @@
 {% extends "base.html" %}
 
 {% block content %}
-<section id="profile" class="container" style="max-width: 600px;">
-    <div class="card mt-4 drop-shadow">
-        <div id="profile-pic" class="mt-5">
-            <img src="../static/images/headshot.jpg" class="rounded mx-auto d-block" alt="profile-pic" style="height: 200px;">
+<section id="profile" class="container-fluid px-0" style="background-image: url(../static/images/cardiffbay.svg); background-size: cover; background-position: center; height: 800px;">
+    <div class="container" style="padding-top: 100px;">
+        <div class="card mx-auto" style="max-width: 600px; box-shadow: 0 20px 50px 0 rgb(0 0 0 / 90%);">
+            <div id="profile-pic" class="mt-5">
+                <img src="../static/images/headshot.jpg" class="rounded mx-auto d-block" alt="profile-pic" style="height: 200px;">
+            </div>
+            <div class="display-5 fs-3 text-center mt-3">Jack Joshua Smith</div>
+            <div id="text" class="text-center mt-4 mb-5 mx-auto px-4">
+                <p class="lead">
+                    Hi! My name's Jack, I'm {{ age }} and a coder by trade. In my spare time I like to play games, produce music, read and run.
+                </p>
+                <p class="lead">
+                    On Wednesdays I go to a boxing class after work before heading out for a pub quiz in the evening. Once the work week is over <i>if</i> I'm not still at my computer I can often be found in a park,
+                    a beer garden or a gig.
+                </p>
+            </div>
         </div>
-        <div class="display-5 fs-3 text-center mt-3">Jack Joshua Smith</div>
-        <div id="text" class="text-center mt-4 mb-5 mx-auto px-4">
-            <p class="lead">
-                Hi! My name's Jack, I'm {{ age }} and a coder by trade. In my spare time I like to play games, produce (fairly mediocre) music, read and run.
-            </p>
-            <p class="lead">
-                On Wednesdays I go to a boxing class after work before heading out for a pub quiz in the evening. Once the work week is over <i>if</i> I'm not still at my computer I can often be found in a park,
-                a beer garden or a gig.
-            </p>
-        </div>
+
     </div>
 </section>
 <section id="previous-experience" class="container mt-2 pt-2">
@@ -31,30 +34,30 @@
             computers dipping into professional software like Photoshop and Illustrator, more thoroughly learning music production programs starting with Fruity Loops and then continuing with Ableton Live for the past 7 years
             or so, and occasionally dabbling in the video editing software Adobe Premiere primarily for my media studies A-level and then more recently making videos for friend and family birthdays. I'd say there are two main
             benefits that I've taken from these hobbies, the first is a familiarity with how professional software tends to function at the user experience level and the second is a knack for independent learning,
-            troubleshooting and problem solving. I also wanted to be sure my chosen career would be somewhat future-proof as I am planning on dedicating my future to developing this skill set. 
+            troubleshooting and problem solving. I also wanted to be sure my chosen career would be somewhat future-proof as I am going to dedicate my future to developing this skill set. 
         </p>
         <div class="collapse" id="expandMyStory">
             <p class="lead">
-                My first instinct was to study for a qualification alongside my job. I started speaking to someone with a background in the industry. A few weeks later he got in contact and suggested that I work for 
+                My first instinct was to study for a qualification alongside my job, but then I started speaking to a contact with a background in the industry. A few weeks later he got in touch and suggested that I work for 
                 him developing an app. Of course I jumped at the opporunity.
             </p>
             <p class="lead">
                 The upsides have been tremendous; I've been able to dedicate all of my working hours to developing an app single-handedly from start to finish, which has allowed me to test and play and develop my 
-                skills independently. I've worked through every problem to its solution and understands how each individual component fits into the app as a whole.
+                skills independently. I've worked through every problem to its solution and understand how each component fits into the app as a whole.
             </p>
             <p><a href="/work" class="lead fs-6 text-reset text-decoration-none">Click here to find out more about the project.</a></p>
-            <p class="lead">
+            <!-- <p class="lead">
                 I'm excited to start the next chapter of my career and very much looking forward to meeting everyone on my team-to-be.
-            </p>
+            </p> -->
         </div>
         <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#expandMyStory" aria-expanded="false" aria-controls="expandMyStory" onclick="style.display = 'none'">Continue reading</button>
     </div>
 </section>
 <section id="spotify" class="container-flex py-2" style="background-image: url(../static/images/spotify-background.svg); background-size: cover; background-position: center; height: fit-content;">
-    <div class="container my-5">
-        <!-- <div class="text-center">
-            <img src="../static/images/spotify-logo.svg" class="img-fluid" alt="spotify-logo" style="width: 60px; max-width: 15vw;">
-        </div> -->
+    <div class="container my-3">
+        <div class="text-center">
+            <img src="../static/images/spotify-logo.svg" class="img-fluid" alt="spotify-logo" style="width: 60px; max-width: 10vw;">
+        </div>
         <iframe class="mt-3" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/71PkQ2p6NFAOs1dETsPZU7?utm_source=generator&theme=0" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
         <a href="https://open.spotify.com/user/dew5t056vvvfsvcqg1pnxjnq6?si=37c49b27d13e4651" class="text-center text-white text-decoration-none" target="_blank"><p>Full profile</p></a>
     </div>
