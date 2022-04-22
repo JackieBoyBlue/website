@@ -14,9 +14,9 @@ app = Flask(__name__)
 
 @app.before_request
 def before_request():
-    if request.is_secure: return
+    if request.url.startswith('https://'): return
     elif 'localhost' in request.url: return
-    return redirect(request.url.replace('http://', 'https://', 1))
+    else: return redirect(request.url.replace('http://', 'https://', 1))
 
 
 # Homepage / profile
