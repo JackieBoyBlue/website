@@ -1,10 +1,10 @@
-from threading import local
 import requests
 from os import environ
-from flask import Flask, redirect, render_template, request
+from flask import Flask, render_template
 from datetime import datetime
 from math import floor
 from json import loads
+from flask_talisman import Talisman
 
 
 
@@ -12,13 +12,9 @@ from json import loads
 app = Flask(__name__)
 
 
-@app.before_request
-def before_request():
-    if request.is_secure: return
-    elif app.env == 'development': return
-    else:
-        url = request.url.replace('http://', 'https://', 1)
-        return redirect(url, 301)
+# Initialise Flask Talisman
+talisman = Talisman(app, content_security_policy=None)
+if environ.get('IN_CONTAINER') == False: talisman.force_https = False
 
 
 # Homepage / profile
@@ -40,18 +36,19 @@ def profile():
     return render_template('profile.html', age=age, katas=katas)
 
 
+# CV
 @app.route('/cv')
 def cv():
     return render_template('cv.html')
 
 
+# Work experience
 @app.route('/work')
 def work():
     return render_template('work.html')
 
 
-
-# Error handling
+# 404 handler
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html'), {"Refresh": "5; url=/"}
