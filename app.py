@@ -1,6 +1,7 @@
+from threading import local
 import requests
 from os import environ
-from flask import Flask, render_template
+from flask import Flask, redirect, render_template, request
 from datetime import datetime
 from math import floor
 from json import loads
@@ -9,6 +10,13 @@ from json import loads
 
 # Initialise app
 app = Flask(__name__)
+
+
+@app.before_request
+def before_request():
+    if request.is_secure: return
+    elif 'localhost' in request.url: return
+    return redirect(request.url.replace('http://', 'https://', 1))
 
 
 # Homepage / profile
