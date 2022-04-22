@@ -12,7 +12,7 @@ from json import loads
 app = Flask(__name__)
 
 
-@app.before_first_request
+@app.before_request
 def before_request():
     if request.is_secure: return
     elif app.env == 'development': return
