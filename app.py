@@ -14,12 +14,12 @@ app = Flask(__name__)
 
 # Initialise Flask Talisman
 talisman = Talisman(app, content_security_policy=None)
-if environ.get('IN_CONTAINER') == False: talisman.force_https = False
+if not environ.get('IN_CONTAINER'): talisman.force_https = False
 
 
 # Homepage / profile
 @app.route('/')
-@app.route('/profile')
+@app.route('/profile/')
 def profile():
     # Calculate age to save me updating the site
     age = datetime.today() - datetime(1995, 3, 5)
@@ -37,13 +37,13 @@ def profile():
 
 
 # CV
-@app.route('/cv')
+@app.route('/cv/')
 def cv():
     return render_template('cv.html')
 
 
 # Work experience
-@app.route('/work')
+@app.route('/work/')
 def work():
     return render_template('work.html')
 
