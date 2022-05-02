@@ -28,10 +28,10 @@ def profile():
     # Get data for codewars section
     codewars = loads(requests.get('https://www.codewars.com/api/v1/users/JackieBoyBlue/code-challenges/completed?page={page}').text)
     katas= []
-    for i in codewars['data']:
-        if 'python' in i['completedLanguages']:
-            date = datetime.strptime(i['completedAt'][:10], '%Y-%m-%d')
-            katas.append((i['name'], date.date().strftime('%d/%m/%y')))
+    for i in codewars['data'][:10]:
+            if 'python' in i['completedLanguages']:
+                date = datetime.strptime(i['completedAt'][:10], '%Y-%m-%d')
+                katas.append((i['name'], date.date().strftime('%d/%m/%y')))
 
     return render_template('profile.html', age=age, katas=katas)
 
