@@ -1,8 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<section id="previous-experience" class="container" style="max-width: 800px;">
-    <!-- <img src="../static/images/work.svg" alt="working-icon" class="mx-auto d-block mt-5" height="200px"> -->
+<section id="carbon-gyroscope" class="container" style="max-width: 800px;">
     <div class="card mt-5 drop-shadow">
         <div id="text" class="mt-4 mb-5 w-75 mx-auto">
             <div class="display-6 text-center my-3">carbonGyroscope</div>
@@ -13,25 +12,25 @@
                 of emissions and offsets are displayed which inform the customer how close they are to carbon neutrality as well as providing an insight into the effects of their day to day spending.
             </p>
             <div class="display-6 fs-3 text-center my-3">The Back End</div>
-            <p class="fw-light">
+            <p class="lead">
                 The project is a Flask app, which we are attracted to because it’s lightweight. The core functionality is based around the dashboard. The first function allows users to synchronise with their 
                 Starling bank account, in practice pulling their transaction data since their last synchronisation, filtering the data for usable transactions (some categories do not provide enough information 
                 for us to make an estimate i.e. finances, gifts), estimating the footprint and then updating the database and display on the dashboard to reflect the impact of the recent purchases.
             </p>
-            <p class="fw-light"> 
+            <p class="lead"> 
                 The second function is to take the difference between what has been emitted and what has been offset so that we can display a price and allow the user to make the transaction. As we are already connected to 
                 the user’s bank account via OAuth2.0 the payment can be made directly without any need to enter or store card details. This takes the form of a put request which includes a digest and a 
                 signature. Having first implemented this part of the app with RSA I later transitioned to ECDSA due to its speed and security. The dashboard also features a feedback section which 
                 entails a drop down list displaying each of the user’s recent transactions along with a tag based input system. I was planning on using this information to make more accurate estimates over time.
             </p>
             <div class="display-6 fs-3 text-center my-3">The Front End</div>
-            <p class="fw-light">
+            <p class="lead">
                 The website itself uses Bootstrap 5 customised with CSS. There is some JavaScript but I kept it to a minimum to reduce the possibility of an injection attack. The site was designed to be mobile first 
                 but is scalable to any screen size as is one of the advantages of Bootstrap; with this in mind I used .svg images wherever possible. I made use of Jinja2 so that the site would accurately 
                 represent the user’s current data.
             </p>
             <div class="display-6 fs-3 text-center my-3">Databases</div>
-            <p class="fw-light">
+            <p class="lead">
                 The core database is Postgres. I decided to use a relational database because there are interdependent datasets, i.e. users, user_payments, event_log, etc., and I wanted to force certain fields to 
                 use a default, i.e. a payment made to us must show false until it’s offset at the end of the bulk offset period.<br><br>
 
@@ -41,22 +40,46 @@
                 change. For these reasons I decided to also use a noSQL database in MongoDB.
             </p>
             <div class="display-6 fs-3 text-center my-3">Webhooks</div>
-            <p class="fw-light">
+            <p class="lead">
                 I had implemented webhooks with an ‘Automatic Mode’ so that payments are offset as they are made. However as the app makes payments using an access token this is not possible due to tokens being retired 
                 when a user logs out. If I was still working on the project in this form I would use webhooks to update the emissions figure without offsetting it immediately.
             </p>
             <div class="display-6 fs-3 text-center my-3">Deployment</div>
-            <p class="fw-light">
+            <p class="lead">
                 I had a trial run of deploying the app using Docker Compose and hosting the app on Azure. While successful, the app is not available as it is still in development due to a change in direction.
             </p>
             <div class="display-6 fs-3 text-center my-3">Why isn’t the app in production?</div>
-            <p class="fw-light">
+            <p class="lead">
                 With the app all but finished, the financier and I had a meeting to discuss our next steps. It had reached a point where we would need to expand to take the app to the next level. At the same time 
                 we became aware of another app, also in development, that’s taking an exceedingly similar approach. Further still, we had growing doubts over the effectiveness of offsetting carbon and the false 
                 reassurance that this can give to consumers. With all of this taken into account we have decided not to continue with the project in its current form. We may still release a stripped back version that 
                 makes use of the Open Banking API and focuses solely on giving insights into one’s carbon footprint at a transactional level.
             </p>
-            <a href="https://github.com/JackieBoyBlue/carbon-gyroscope" class="text-decoration-none" target="_blank"><p class="fw-light text-muted text-center">See the code here</p></a>
+            <a href="https://github.com/JackieBoyBlue/carbon-gyroscope" target="_blank" style="color: #212529; text-decoration-color: #ff9100;"><p class="text-center lead">See the code here</p></a>
+        </div>
+    </div>
+</section>
+<section id="data-processing">
+    <div class="container" style="max-width: 800px;">
+        <div class="card mt-5 drop-shadow">
+            <div id="text" class="mt-4 mb-5 w-75 mx-auto">
+                <div class="display-6 text-center my-3">Global Startup Investor Network</div>
+                <p class="lead">
+                    My work with <a href="https://www.mystartupnetworks.com/" target="_blank" style="color: #212529; text-decoration-color: #ff9100;">Global Startup Investor Network</a> involved sorting their
+                    investor contact data and automating the process of finding their company name and LinkedIn profiles. The investor data itself was a text file with a variety of formatting, all perfectly readable to the human
+                    eye but less so to a program. I overcame this problem by focusing on the content rather than the format.
+                </p>
+                <p class="lead">    
+                    LinkedIn and Google both have systems in place to prevent data from being scraped. My solution to this problem was to extract the company name from the emails given and to generate a URL which will open a 
+                    search on LinkedIn with the investor's full name. I then formatted the data into a .csv file so that it can be used by staff with ease.
+                </p>
+                <a data-bs-toggle="collapse" href="#data-code" role="button" aria-expanded="false" aria-controls="data-code" style="color: #212529; text-decoration-color: #ff9100;"><p class="text-center lead">See the code here</p></a>
+            </div>
+        </div>
+    </div>
+    <div class="collapse" id="data-code">
+        <div class="drop-shadow mt-4 mx-auto" style="width:fit-content">
+            <script src="https://gist.github.com/JackieBoyBlue/c08143b36f054777f3ac915a9a159383.js"></script>
         </div>
     </div>
 </section>
