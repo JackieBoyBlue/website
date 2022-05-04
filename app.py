@@ -48,6 +48,12 @@ def work():
     return render_template('work.html')
 
 
+# About me
+@app.route('/about-me/')
+def about_me():
+    return render_template('about-me.html')
+
+
 # 404 handler
 @app.errorhandler(404)
 def page_not_found(e):

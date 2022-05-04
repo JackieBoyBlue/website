@@ -16,3 +16,12 @@ page[size="a4"] {
 .drop-shadow {
     box-shadow: 0 20px 50px 0 rgb(0 0 0 / 15%);
 }
+
+.label-color {
+    width: 15px;
+    height: 15px;
+    background: red;
+    border-radius: 25%;
+    display: inline-block;
+    margin-right: 5px;
+}
