@@ -1,6 +1,6 @@
 import requests
 from os import environ
-from flask import Flask, render_template
+from flask import Flask, render_template, send_from_directory
 from datetime import datetime
 from math import floor
 from json import loads
@@ -10,6 +10,7 @@ from flask_talisman import Talisman
 
 # Initialise app
 app = Flask(__name__)
+app.config['UPLOAD_FOLDER'] = 'static/uploads'
 
 
 # Initialise Flask Talisman
@@ -46,6 +47,20 @@ def cv():
 @app.route('/work/')
 def work():
     return render_template('work.html')
+
+
+# About me
+@app.route('/about-me/')
+def about_me():
+    return render_template('about-me.html')
+
+
+# Download CV
+@app.route("/uploads/<path:name>")
+def download(name):
+    return send_from_directory(
+        app.config['UPLOAD_FOLDER'], name, as_attachment=True
+    )
 
 
 # 404 handler

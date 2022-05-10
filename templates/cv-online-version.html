@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Jack's CV</title>
+        <meta name="author" content="Jack Joshua Smith">
+        <meta name="description" content="The curriculum vitae of Jack Smith, a knowledge hungry coder looking to work with motivated people at a forward thinking company while continuing to develop my skills in the world of software.">
+        <meta name="keywords" content="cv curriculum vitae job application jack joshua smith coder coding programmer programming software development">
+        <link rel="icon" type="image/x-icon" href="../static/images/J-logo.svg">
+
+        <!-- BS5 -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    </head>
+    <body>
+        <style>
+            page[size="a4"] {
+                background: white;
+                width: 21cm;
+                height: 29.7cm;
+                display: block;
+                margin: 0 auto;
+                margin-bottom: 0.5cm;
+                box-shadow: 0 20px 50px 0 rgb(0 0 0 / 15%);
+            }
+        </style>
+        <!-- CV -->
+        <page size="a4" class="drop-shadow" style="background-image: url(../static/images/cv-background.svg); background-position: bottom;">
+            <!-- Header -->
+            <div id="header" class="w-100" height="100" style="background-color: #4433df; color: white;">
+                <div class="display-6 text-center fs-3 pt-3">Jack Joshua Smith</div>
+                <div class="display-6 text-center fs-5 pb-3">Programmer & Software Developer</div>
+            </div>
+            <!-- Profile & contact info -->
+            <div class="row m-5">
+                <div class="col-7" id="profile">
+                    <div class="lead fw-bold">Profile</div>
+                    <div class="mt-2 fs-6">
+                        I'm a motivated programmer with experience in developing an app from start to finish and a hunger to work on new and exciting projects while continuing to refine
+                        and expand my skillset. I bring a holistic awareness of app development, an attentive approach to detail and a can-do attitude. I'm looking to ply my trade 
+                        with a group of motivated people where I can perform my natural role as a key contributor.
+                    </div>
+                </div>
+                <div class="col-5" id="contact-details">
+                    <div class="lead fw-bold text-end">Contact Details</div>
+                    <div class="lead text-end my-2 fs-6">jackjoshuasmith@outlook.com</div>
+                </div>
+            </div>
+            <!-- Employment history and skills -->
+            <div class="row m-5">
+                <div class="col-9">
+                    <div class="lead fw-bold">Employment History</div>
+                    <div class="fs-6 fw-bold mt-2">Software Developer @ carbonGyroscope - June '21 - April '22</div>
+                    <ul>
+                        <li>Writing the core functions (data processing)</li>
+                        <li>Designing and building a user & transaction database with interdependent tables</li>
+                        <li>Designing and making a website</li>
+                        <li>Creating a user login system for the site and for Starling Bank using OAuth2.0</li>
+                        <li>Pulling and cleaning data ready for processing</li>
+                        <li>Setting up a no card payment system using the previously acquired access token and a message signed using ECDSA</li>
+                        <li>Designing and creating a user feedback system using tags and noSQL</li>
+                        <li>Using Docker and Docker-Compose to trial deploy the app on Azure</li>
+                    </ul>
+                    <div class="fs-6 fw-bold mt-2">Debt Control Officer @ Cardiff Council - August '17 - May '21</div>
+                    <ul>
+                        <li>Starting at Grade 4, I secured a Grade 5 position after 8 months</li>
+                        <li>Completing a number of monthly reports</li>
+                        <li>Supporting other members of the team</li>
+                        <li>Liaising with various departments and housing organisations</li>
+                        <li>Helping service users to understand law and policy in writing and on the phone</li>
+                    </ul>
+                </div>
+                <div class="col-3 text-end">
+                    <div class="lead fw-bold">Skills</div>
+                    <div class="list-group list-group-flush">
+                        <div class="list-group-item pe-0" style="background-color: transparent;">Python</div>
+                        <div class="list-group-item pe-0" style="background-color: transparent;">Flask</div>
+                        <div class="list-group-item pe-0" style="background-color: transparent;">OAuth2.0</div>
+                        <div class="list-group-item pe-0" style="background-color: transparent;">RSA & ECDSA implementation</div>
+                        <div class="list-group-item pe-0" style="background-color: transparent;">HTML & CSS</div>
+                        <div class="list-group-item pe-0" style="background-color: transparent;">SQL (Postgres)</div>
+                        <div class="list-group-item pe-0" style="background-color: transparent;">noSQL (MongoDB)</div>
+                        <div class="list-group-item pe-0" style="background-color: transparent;">Docker</div>
+                        <div class="list-group-item pe-0" style="background-color: transparent;">MS Azure</div>
+                    </div>
+                    <img src="../static/images/websiteQR.svg" style="position: relative; right: 0px; top: 10px; width: 150px;">
+                </div>
+                <div class="fw-light">References: Available on request</div>
+                <div class="col fw-light text-center"></div>
+            </div>
+        </page>
+        <div class="text-center w-100 my-5">
+            <a href="mailto:jackjoshuasmith@outlook.com"><button type="button" class="btn btn-success btn-lg">Email me</button></a>
+        </div>
+    </body>
+</html>

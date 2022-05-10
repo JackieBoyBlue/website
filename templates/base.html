@@ -33,18 +33,25 @@
                             <a class="nav-link text-center display-6 fs-3 fw-bold" href="/profile">Profile</a>
                             {% endif %}
                         </li>
-                        <li class="nav-item mt-2">
+                        <!-- <li class="nav-item mt-2">
                             {% if request.url_rule.endpoint == 'cv' %}
                             <a class="nav-link text-center display-6 fs-3 fw-bold active" href="/cv">CV</a>
                             {% else %}
                             <a class="nav-link text-center display-6 fs-3 fw-bold" href="/cv">CV</a>
                             {% endif %}
-                        </li>
+                        </li> -->
                         <li class="nav-item mt-2">
                             {% if request.url_rule.endpoint == 'work' %}
                             <a class="nav-link text-center display-6 fs-3 fw-bold active" href="/work">Work</a>
                             {% else %}
                             <a class="nav-link text-center display-6 fs-3 fw-bold" href="/work">Work</a>
+                            {% endif %}
+                        </li>
+                        <li class="nav-item mt-2">
+                            {% if request.url_rule.endpoint == 'about_me' %}
+                            <a class="nav-link text-center display-6 fs-3 fw-bold active" href="/about-me">About Me</a>
+                            {% else %}
+                            <a class="nav-link text-center display-6 fs-3 fw-bold" href="/about-me">About Me</a>
                             {% endif %}
                         </li>
                     </ul>

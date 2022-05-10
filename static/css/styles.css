@@ -10,9 +10,23 @@ page[size="a4"] {
     height: 29.7cm;
     display: block;
     margin: 0 auto;
-    margin-bottom: 0.5cm; 
+    margin-bottom: 0.5cm;
 }
 
 .drop-shadow {
     box-shadow: 0 20px 50px 0 rgb(0 0 0 / 15%);
+}
+
+#text {
+    width: 75%;
+}
+
+@media screen and (max-width: 520px) {
+    .lead {
+        font-size: medium;
+    }
+
+    #text {
+        width: 90%;
+    }
 }
